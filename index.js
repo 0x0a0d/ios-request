@@ -7,8 +7,8 @@ const headers = {
 };
 
 /**
- * @param {request.CoreOptions} option
- * @returns {request.RequestAPI<requestPromise.RequestPromise<any>, requestPromise.RequestPromiseOptions, request.RequiredUriUrl>}
+ * @param {requestPromise.RequestPromiseOptions} option
+ * @returns {request.RequestAPI|requestPromise.RequestPromiseAPI}
  */
 function createRequest(option = {}) {
     if (option.headers != null) {
@@ -29,9 +29,6 @@ function createRequest(option = {}) {
     });
 }
 
-/**
- * @type {{createRequest: (function(request.CoreOptions): request.RequestAPI<requestPromise.RequestPromise<any>, requestPromise.RequestPromiseOptions, request.RequiredUriUrl>)}}
- */
 module.exports = {
     createRequest
 };
